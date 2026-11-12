@@ -1,0 +1,6 @@
+{
+  "name": "دعوة زفاف محمد & نورهان",
+  "description": "دعوة زفاف رقمية سينمائية فاخرة لحفل زفاف محمد ونورهان — الثلاثاء 24 نوفمبر 2026، القاعة الماسية، نادي التجنيد لضباط الشرطة.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,203 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-burgundy-deep: #24040A;
+    --bg-burgundy-mid: #420814;
+    --bg-crimson-warm: #580C1C;
+    --gold-primary: #D4AF37;
+    --gold-light: #F5E6AD;
+    --gold-deep: #99741D;
+    --ivory: #F7F3E8;
+  }
+
+  html {
+    direction: rtl;
+    text-align: right;
+    scroll-behavior: auto;
+    background-color: #2A050C;
+    color: #F7F3E8;
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  body {
+    overflow-x: hidden;
+    background: radial-gradient(circle at 50% 20%, #4E0A19 0%, #2E050E 55%, #1B0207 100%);
+    background-color: #2A050C;
+    color: #F7F3E8;
+  }
+}
+
+.font-ruqaa {
+  font-family: 'Aref Ruqaa', serif;
+}
+
+.font-kufi {
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+.font-tajawal {
+  font-family: 'Tajawal', sans-serif;
+}
+
+.font-monogram {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Metallic Gold Text Gradient */
+.text-metallic-gold {
+  background: linear-gradient(
+    135deg,
+    #B38728 0%,
+    #FBF5B7 28%,
+    #D4AF37 50%,
+    #FFF3B0 72%,
+    #AA771C 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Diamond Shimmer Text Effect for "القاعة الماسية" */
+@keyframes diamondShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.text-diamond-shimmer {
+  background: linear-gradient(
+    110deg,
+    #C5A059 0%,
+    #F7F3E8 20%,
+    #D4AF37 40%,
+    #FFFFFF 50%,
+    #7DD3FC 54%,
+    #FFFFFF 58%,
+    #D4AF37 68%,
+    #F7F3E8 85%,
+    #C5A059 100%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: diamondShimmer 5.5s linear infinite;
+}
+
+/* Breathing Glow for Wax Seal */
+@keyframes sealPulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+.animate-seal-glow {
+  animation: sealPulseGlow 3.6s ease-in-out infinite;
+}
+
+@keyframes slowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: slowSpin 28s linear infinite;
+}
+
+@keyframes slowSpinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-reverse-slow {
+  animation: slowSpinReverse 36s linear infinite;
+}
+
+@keyframes promptFade {
+  0%, 100% {
+    opacity: 0.38;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+.animate-prompt-fade {
+  animation: promptFade 2.6s ease-in-out infinite;
+}
+
+@keyframes scrollLineFlow {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0.2;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+  51% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0.2;
+  }
+}
+
+.animate-scroll-line {
+  animation: scrollLineFlow 2.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+}
+
+/* Subtle Film Grain Overlay */
+.bg-film-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Luxury Glassmorphic Card */
+.royal-glass-card {
+  background: linear-gradient(
+    145deg,
+    rgba(72, 10, 24, 0.72) 0%,
+    rgba(38, 4, 12, 0.64) 100%
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  box-shadow: 0 24px 60px -15px rgba(18, 2, 6, 0.78), inset 0 1px 0 0 rgba(251, 245, 183, 0.18);
+}
+
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  .animate-seal-glow,
+  .animate-spin-slow,
+  .animate-spin-reverse-slow,
+  .animate-prompt-fade,
+  .animate-scroll-line,
+  .text-diamond-shimmer {
+    animation: none !important;
+  }
+}
